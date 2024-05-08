@@ -10,9 +10,9 @@ Interact directly with the PostgreSQL database using the psql cli:
   ```bash
   docker exec -it postgres bash
   ```
-2. Once inside the container, connect to the webshop_experiment database:
+2. Once inside the container, connect to the database:
 ```bash
-psql -U user -d webshop_experiment
+psql -U user123 -d webshop
 ```
 
 ### Using Adminer
@@ -21,6 +21,6 @@ psql -U user -d webshop_experiment
 2. Log in with the following credentials:
     - System: `PostgreSQL`
     - Server: `postgres` 
-    - Username: `user`
-    - Password: `password`
-    - Database: `webshop_experiment`
+    - Username: `user123`
+    - Password: `password123`
+    - Database: `webshop`

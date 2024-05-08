@@ -1,41 +1,35 @@
 version: '3'
 
 services:
-  payload:
-    image: node:18-alpine
-    ports:
-      - '3000:3000'
-    volumes:
-      - .:/home/node/app
-      - node_modules:/home/node/app/node_modules
-    working_dir: /home/node/app/
-    command: sh -c "yarn install && yarn dev"
-    depends_on:
-      - postgres
-    env_file:
-      - .env
-    stdin_open: true
-    tty: true
-
   postgres:
+    container_name: postgres
     image: postgres:latest
     ports:
       - '5432:5432'
     environment:
-      POSTGRES_DB: webshop_experiment
-      POSTGRES_USER: username
-      POSTGRES_PASSWORD: password
+      POSTGRES_DB: webshop
+      POSTGRES_USER: user123
+      POSTGRES_PASSWORD: password123
     volumes:
       - pgdata:/var/lib/postgresql/data
     stdin_open: true
     tty: true
+    networks:
+      - postgres
 
   adminer:
+    container_name: adminer
     image: adminer
     ports:
       - "8080:8080"
     depends_on:
       - postgres
+    networks:
+      - postgres
+
+networks:
+  postgres:
+    driver: bridge
 
 volumes:
   data:
