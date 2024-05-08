@@ -1,5 +1,12 @@
 # Webshop Experiment With Payload
 
+## Accessing the Payload admin panel:
+
+1. Start docker
+1. `docker compose up -d`
+1. `yarn dev`
+1. Open your web browser and visit `http://localhost:3000/`.
+
 ## Accessing the database
 
 ### Using psql
