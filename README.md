@@ -1,6 +1,6 @@
-# Webshop Experiment with Payload
+# Webshop Experiment With Payload
 
-## Accessing the Database
+## Accessing the database
 
 ### Using psql
 
