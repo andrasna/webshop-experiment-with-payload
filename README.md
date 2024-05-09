@@ -1,6 +1,6 @@
 # Webshop Experiment With Payload
 
-## Accessing the Payload admin panel:
+## Accessing the Payload admin panel
 
 1. Start docker
 1. `docker compose up -d`
